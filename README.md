@@ -61,6 +61,7 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 - 🌙 Dark mode support
 - 📱 Mobile responsive design
 - 🔍 Easy to navigate interface
+- 🏛️ **Vietnam History Quiz** – Test your knowledge of Vietnam’s rich history with interactive quizzes!  
 
 ## 🤝 Contributing
 ( Video hướng dẫn contributing )
