@@ -381,16 +381,16 @@ const initialProgress: Record<string, boolean> = storedProgress ? JSON.parse(sto
 		<!-- Progress Overview -->
 		<div class="mb-12 grid grid-cols-1 md:grid-cols-3 gap-6">
 			{roadmapSteps.map((level) => (
-				<div class={`bg-${level.color}-50 dark:bg-${level.color}-900/10 rounded-xl p-6`}>
+				<div class={`bg-${level.color}-100 dark:bg-${level.color}-900/30 rounded-xl p-6`}>
 					<div class="flex items-center justify-between mb-4">
-						<h3 class={`text-lg font-semibold text-${level.color}-700 dark:text-${level.color}-300`}>
+						<h3 class={`text-lg font-semibold text-${level.color}-600 dark:text-${level.color}-300`}>
 							{level.level}
 						</h3>
 						<span class="progress-percentage text-sm font-medium text-gray-600 dark:text-gray-400">
 							0%
 						</span>
 					</div>
-					<div class={`w-full h-2 bg-${level.color}-100 dark:bg-${level.color}-900/30 rounded-full overflow-hidden`}>
+					<div class={`w-full h-2 bg-${level.color}-50 rounded-full overflow-hidden`}>
 						<div class={`progress-bar h-full bg-${level.color}-500 rounded-full w-0 transition-all duration-500`}></div>
 					</div>
 				</div>
@@ -461,7 +461,7 @@ const initialProgress: Record<string, boolean> = storedProgress ? JSON.parse(sto
 											</span>
 											<h3 class="text-xl font-bold text-gray-900 dark:text-white">{step.title}</h3>
 										</div>
-										<span class={`text-sm font-medium text-${level.color}-600 dark:text-${level.color}-400 bg-${level.color}-50 dark:bg-${level.color}-900/20 px-3 py-1 rounded-full`}>
+										<span class={`text-sm font-medium text-${level.color}-600 dark:text-${level.color}-400 bg-${level.color}-100 dark:bg-${level.color}-900/20 px-3 py-1 rounded-full`}>
 											{step.duration}
 										</span>
 									</div>
@@ -735,6 +735,10 @@ const initialProgress: Record<string, boolean> = storedProgress ? JSON.parse(sto
 	.dark .bg-emerald-900\/30 { background-color: rgba(6, 78, 59, 0.3); }
 	.dark .bg-indigo-900\/30 { background-color: rgba(49, 46, 129, 0.3); }
 	.dark .bg-rose-900\/30 { background-color: rgba(136, 19, 55, 0.3); }
+	
+	.bg-emerald-500 { background-color: #10b981; }
+	.bg-indigo-500 { background-color: #6366f1; }
+	.bg-rose-500 { background-color: #f43f5e; }
 	
 	.border-emerald-500 { border-color: #10b981; }
 	.border-indigo-500 { border-color: #6366f1; }
