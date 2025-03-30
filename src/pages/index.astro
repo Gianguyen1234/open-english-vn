@@ -381,16 +381,16 @@ const initialProgress: Record<string, boolean> = storedProgress ? JSON.parse(sto
 		<!-- Progress Overview -->
 		<div class="mb-12 grid grid-cols-1 md:grid-cols-3 gap-6">
 			{roadmapSteps.map((level) => (
-				<div class={`bg-${level.color}-50 dark:bg-${level.color}-900/10 rounded-xl p-6`}>
+				<div class={`bg-${level.color}-100 dark:bg-${level.color}-900/30 rounded-xl p-6`}>
 					<div class="flex items-center justify-between mb-4">
-						<h3 class={`text-lg font-semibold text-${level.color}-700 dark:text-${level.color}-300`}>
+						<h3 class={`text-lg font-semibold text-${level.color}-600 dark:text-${level.color}-300`}>
 							{level.level}
 						</h3>
 						<span class="progress-percentage text-sm font-medium text-gray-600 dark:text-gray-400">
 							0%
 						</span>
 					</div>
-					<div class={`w-full h-2 bg-${level.color}-100 dark:bg-${level.color}-900/30 rounded-full overflow-hidden`}>
+					<div class={`w-full h-2 bg-${level.color}-50 rounded-full overflow-hidden`}>
 						<div class={`progress-bar h-full bg-${level.color}-500 rounded-full w-0 transition-all duration-500`}></div>
 					</div>
 				</div>
@@ -439,8 +439,8 @@ const initialProgress: Record<string, boolean> = storedProgress ? JSON.parse(sto
 					)}
 					<div class="relative">
 						<div class="flex items-center mb-8 gap-6">
-							<div class={`flex items-center justify-center w-32 h-32 rounded-2xl bg-${level.color}-100 dark:bg-${level.color}-900/30 shadow-lg`}>
-								<span class={`text-${level.color}-600 dark:text-${level.color}-300 text-2xl font-bold`}>{level.level}</span>
+							<div class={`flex items-center justify-center w-max min-h-12 rounded-2xl bg-${level.color}-100 dark:bg-${level.color}-900/30 shadow-lg px-3`}>
+								<span class={`text-${level.color}-600 dark:text-${level.color}-300 text-2xl font-bold p-2`}>{level.level}</span>
 							</div>
 							<div>
 								<h2 class="text-2xl font-bold text-gray-900 dark:text-white">{level.level}</h2>
@@ -454,14 +454,14 @@ const initialProgress: Record<string, boolean> = storedProgress ? JSON.parse(sto
 									data-level={levelIndex}
 									data-step={stepIndex}
 								>
-									<div class="flex justify-between items-start mb-4">
+									<div class="flex flex-col gap-4 justify-between items-start mb-4">
 										<div class="flex items-center gap-3">
 											<span class={`flex-shrink-0 w-6 h-6 rounded-full bg-${level.color}-100 dark:bg-${level.color}-900/30 flex items-center justify-center text-sm font-medium text-${level.color}-600 dark:text-${level.color}-400`}>
 												{step.sequence}
 											</span>
 											<h3 class="text-xl font-bold text-gray-900 dark:text-white">{step.title}</h3>
 										</div>
-										<span class={`text-sm font-medium text-${level.color}-600 dark:text-${level.color}-400 bg-${level.color}-50 dark:bg-${level.color}-900/20 px-3 py-1 rounded-full`}>
+										<span class={`text-sm font-medium text-${level.color}-600 dark:text-${level.color}-400 bg-${level.color}-100 dark:bg-${level.color}-900/20 px-3 py-1 rounded-full`}>
 											{step.duration}
 										</span>
 									</div>
@@ -475,7 +475,7 @@ const initialProgress: Record<string, boolean> = storedProgress ? JSON.parse(sto
 										{step.skills.map((skill) => (
 											<li class="flex items-center justify-between text-gray-700 dark:text-gray-300 group-hover:transform group-hover:translate-x-1 transition-transform duration-300 skill-item">
 												<div class="flex items-center">
-													<svg class={`w-5 h-5 mr-3 text-${level.color}-500`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+													<svg class={`w-5 h-5 min-w-5 min-h-5 mr-3 text-${level.color}-500`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
 														<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
 													</svg>
 													<span class="skill-text">{skill}</span>
@@ -617,7 +617,10 @@ const initialProgress: Record<string, boolean> = storedProgress ? JSON.parse(sto
 	// Initialize tooltips and resource indicators
 	function initializeTooltips() {
 		document.querySelectorAll('.skill-item').forEach((skillItem) => {
-			const skillText = skillItem.querySelector('.skill-text')?.textContent?.toLowerCase();
+			const skillTextEl = skillItem.querySelector('.skill-text');
+			if (!skillTextEl) return;
+
+			const skillText = skillTextEl.textContent?.toLowerCase();
 			if (skillText) {
 				const matchingResources = resources.filter(resource => 
 					resource.data.tags.some(tag => skillText.includes(tag.toLowerCase())) ||
@@ -629,11 +632,14 @@ const initialProgress: Record<string, boolean> = storedProgress ? JSON.parse(sto
 					const indicator = document.createElement('span');
 					indicator.className = `ml-2 inline-flex items-center justify-center w-5 h-5 text-xs font-medium rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300`;
 					indicator.textContent = matchingResources.length.toString();
-					skillItem.querySelector('.skill-text')?.parentElement?.appendChild(indicator);
+					skillTextEl.parentElement?.appendChild(indicator);
 
 					// Add tooltip
 					const tooltip = document.createElement('div');
-					tooltip.className = 'skill-tooltip hidden absolute z-50 w-64 p-4 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 text-sm';
+					tooltip.className = 'skill-tooltip fixed z-100 w-64 p-4 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 text-sm max-h-[calc(100dvh-12rem)] overflow-y-auto hidden';
+					Object.assign(tooltip.style, {
+						left: skillItem.getBoundingClientRect().left + 'px',
+					});
 					tooltip.innerHTML = `
 						<h4 class="font-semibold mb-2">Learning Resources:</h4>
 						<ul class="space-y-2">
@@ -647,14 +653,24 @@ const initialProgress: Record<string, boolean> = storedProgress ? JSON.parse(sto
 						</ul>
 					`;
 
-					skillItem.appendChild(tooltip);
+					document.body.appendChild(tooltip);
 
 					// Add hover handlers
-					skillItem.addEventListener('mouseenter', () => {
+					skillItem.addEventListener('mouseenter', (e) => {
 						tooltip.classList.remove('hidden');
+						Object.assign(tooltip.style, {
+							top: e.clientY - tooltip.getBoundingClientRect().height / 2 + 'px',
+						});
+					});
+					skillItem.addEventListener('mouseleave', () => {
+						tooltip.classList.add('hidden');
 					});
 
-					skillItem.addEventListener('mouseleave', () => {
+					tooltip.addEventListener('mouseenter', (e) => {
+						e.stopPropagation();
+						tooltip.classList.remove('hidden');
+					});
+					tooltip.addEventListener('mouseleave', () => {
 						tooltip.classList.add('hidden');
 					});
 				}
@@ -735,6 +751,10 @@ const initialProgress: Record<string, boolean> = storedProgress ? JSON.parse(sto
 	.dark .bg-emerald-900\/30 { background-color: rgba(6, 78, 59, 0.3); }
 	.dark .bg-indigo-900\/30 { background-color: rgba(49, 46, 129, 0.3); }
 	.dark .bg-rose-900\/30 { background-color: rgba(136, 19, 55, 0.3); }
+	
+	.bg-emerald-500 { background-color: #10b981; }
+	.bg-indigo-500 { background-color: #6366f1; }
+	.bg-rose-500 { background-color: #f43f5e; }
 	
 	.border-emerald-500 { border-color: #10b981; }
 	.border-indigo-500 { border-color: #6366f1; }
