@@ -148,6 +148,17 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "yuran1811",
+      "name": "Yuran",
+      "avatar_url": "https://avatars.githubusercontent.com/u/76398420?v=4",
+      "profile": "https://www.facebook.com/YuranLegends",
+      "contributions": [
+        "content",
+        "design",
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
