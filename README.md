@@ -34,7 +34,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     </tr>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/MyNameIsKry"><img src="https://avatars.githubusercontent.com/u/117553015?v=4?s=100" width="100px;" alt="Kry"/><br /><sub><b>Kry</b></sub></a><br /><a href="#content-MyNameIsKry" title="Content">🖋</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://www.facebook.com/YuranLegends"><img src="https://avatars.githubusercontent.com/u/76398420?v=4?s=100" width="100px;" alt="Yuran"/><br /><sub><b>Yuran</b></sub></a><br /><a href="#content-yuran1811" title="Content">🖋</a> <a href="#design-yuran1811" title="Design">🎨</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://www.facebook.com/YuranLegends"><img src="https://avatars.githubusercontent.com/u/76398420?v=4?s=100" width="100px;" alt="Yuran"/><br /><sub><b>Yuran</b></sub></a><br /><a href="#content-yuran1811" title="Content">🖋</a> <a href="#design-yuran1811" title="Design">🎨</a> <a href="https://github.com/Gianguyen1234/open-english-vn/issues?q=author%3Ayuran1811" title="Bug reports">🐛</a></td>
     </tr>
   </tbody>
   <tfoot>
