@@ -1,0 +1,9 @@
+{
+  "title": "TED Talks",
+  "description": "TED Talks are inspiring presentations by the non-profit TED, featuring powerful, innovative ideas from engaging speakers. Delivered clearly with subtitles in multiple languages, especially English, they aim to stir emotions, shift viewpoints, and ignite global action.",
+  "url": "https://www.ted.com/",
+  "image": "/open-english-vn/images/resources/ted-talks.png",
+  "category": "General",
+  "tags": ["videos", "listening", "vocabulary", "inspiration", "education"],
+  "free": true
+}

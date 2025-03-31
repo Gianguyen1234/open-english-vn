@@ -1,9 +1,0 @@
-{
-  "title": "ANKI",
-  "description": "Anki is a cross-platform flashcard program (available on Android, iOS, and PC) that helps you focus more on challenging material while spending less time on what you already know. It supports synchronization across devices, allowing you to seamlessly access your flashcards anywhere. With customizable decks and powerful spaced repetition, Anki enables you to learn a new language in a way that suits you best.",
-  "url": "https://apps.ankiweb.net/",
-  "image": "/open-english-vn/images/resources/anki.png",
-  "category": "General",
-  "tags": ["vocabulary", "grammar", "flashcards"],
-  "free": true
-}
