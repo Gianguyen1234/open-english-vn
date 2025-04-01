@@ -3,17 +3,14 @@ import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
 export const getStaticPaths = async () => {
-  const quizzes = await getCollection('quiz'); // Fetch all quizzes
+  const quizzes = await getCollection('quiz');
   return quizzes.map((quiz) => ({
-    params: { id: quiz.id }, // Define route parameters
+    params: { id: quiz.id },
   }));
 };
 const base = import.meta.env.BASE_URL;
 
-// Get the `id` from the route
 const { id } = Astro.params;
-
-// Fetch the quiz data
 const quizzes = await getCollection('quiz');
 const quiz = quizzes.find(q => q.id === id);
 
@@ -21,81 +18,108 @@ if (!quiz) {
   throw new Error(`Quiz not found: ${id}`);
 }
 
-// Convert quiz questions to JSON for Alpine.js
 const quizJson = JSON.stringify(quiz.data.questions);
 ---
 
 <Layout>
-  <div class="max-w-2xl mx-auto p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md"
-       x-data="quizComponent({questions: JSON.parse($el.dataset.quiz)})"
-       data-quiz={quizJson}>
+  <main class="min-h-screen bg-gray-50 dark:bg-gray-900 py-8 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto">
+      <a href={`${base}/quiz`} class="inline-flex items-center mb-6 text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors duration-200">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+        </svg>
+        Back to Quiz List
+      </a>
 
-    <a href={`${base}/quiz`} class="inline-block mb-4 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 font-semibold py-2 px-4 rounded-lg transition-colors duration-200">
-      Back to Quiz List
-    </a>
+      <div class="text-center mb-8">
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">{quiz.data.title}</h1>
+        <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">{quiz.data.description || "Test your knowledge!"}</p>
+      </div>
 
-    <h1 class="text-3xl font-bold text-center text-gray-900 dark:text-white">{quiz.data.title}</h1>
-    <p class="text-center text-gray-600 dark:text-gray-300 mb-6">{quiz.data.description}</p>
+      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden"
+           x-data="quizComponent({questions: JSON.parse($el.dataset.quiz)})"
+           data-quiz={quizJson}>
 
-    <div class="space-y-6">
-      <template x-for="(q, index) in questions" :key="index">
-        <div class="border p-4 rounded-md">
-          <p class="font-semibold" x-text="`${index + 1}. ${q.question}`"></p>
-          <div class="grid grid-cols-2 gap-2 mt-2">
-            <template x-for="option in q.options" :key="option">
-              <button 
-                class="p-3 text-left w-full rounded-md transition-colors duration-200"
-                :class="{
-                  'bg-green-100 text-green-800 hover:bg-green-200': selectedAnswers[index] === option,
-                  'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600': selectedAnswers[index] !== option
-                }"
-                @click="handleAnswerSelect(index, option)"
-                x-text="option"
-                style="margin: 0.3em"
-              >
-              </button>
-            </template>
-          </div>
+        <div class="p-6 space-y-6">
+          <template x-for="(q, index) in questions" :key="index">
+            <div class="border border-gray-200 dark:border-gray-700 p-5 rounded-lg transition-all duration-200 hover:shadow-sm"
+                 :class="{'ring-2 ring-blue-500': currentQuestion === index}">
+              <p class="font-semibold text-lg mb-4 text-gray-800 dark:text-gray-100" x-text="`${index + 1}. ${q.question}`"></p>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <template x-for="(option, optionIndex) in q.options" :key="optionIndex">
+                  <button
+                    class="p-4 text-left w-full rounded-lg transition-all duration-200 border"
+                    :class="{
+                      'bg-green-100 border-green-300 dark:bg-green-900 dark:border-green-700': showResults && option === q.answer,
+                      'bg-blue-100 border-blue-300 dark:bg-blue-900 dark:border-blue-700': selectedAnswers[index] === option && !showResults,
+                      'bg-red-100 border-red-300 dark:bg-red-900 dark:border-red-700': showResults && selectedAnswers[index] === option && selectedAnswers[index] !== q.answer,
+                      'bg-gray-50 border-gray-200 dark:bg-gray-700 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-600': !selectedAnswers[index] || (selectedAnswers[index] !== option && !showResults)
+                    }"
+                    @click="handleAnswerSelect(index, option)"
+                    x-text="option"
+                    :disabled="showResults"
+                  >
+                  </button>
+                </template>
+              </div>
+            </div>
+          </template>
         </div>
-      </template>
+
+        <div class="px-6 pb-6 flex flex-col sm:flex-row justify-between items-center gap-4 border-t border-gray-200 dark:border-gray-700 pt-6">
+          <div x-show="score !== null" class="text-lg font-semibold text-gray-800 dark:text-gray-200">
+            Score: <span x-text="score" class="text-blue-600 dark:text-blue-400"></span>/<span x-text="questions.length"></span>
+            (<span x-text="Math.round((score/questions.length)*100)"></span>%)
+          </div>
+          
+          <button 
+            class="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-medium rounded-lg shadow hover:shadow-md transition-all duration-300"
+            @click="handleSubmit"
+            x-text="score === null ? 'Submit Quiz' : 'Try Again'"
+          >
+          </button>
+        </div>
+      </div>
     </div>
-
-    <button class="mt-6 w-full bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-600 transition-colors duration-200" @click="handleSubmit">
-      Submit Quiz
-    </button>
-
-    <template x-if="score !== null">
-      <p class="mt-4 text-lg font-semibold text-center">
-        Your Score: <span x-text="score"></span> / <span x-text="questions.length"></span>
-      </p>
-    </template>
-  </div>
+  </main>
 </Layout>
 
-<!-- ✅ Define Alpine.js Component Before Using It -->
 <script>
 document.addEventListener("alpine:init", () => {
   Alpine.data("quizComponent", ({ questions }) => ({
     questions,
     selectedAnswers: Array(questions.length).fill(null),
     score: null,
+    showResults: false,
+    currentQuestion: 0,
 
     handleAnswerSelect(index, option) {
       this.selectedAnswers[index] = option;
+      this.currentQuestion = index;
     },
 
     handleSubmit() {
-      let correct = 0;
-      this.selectedAnswers.forEach((answer, index) => {
-        if (answer === this.questions[index].answer) {
-          correct++;
-        }
-      });
-      this.score = correct;
+      if (this.score === null) {
+        // Calculate score
+        let correct = 0;
+        this.selectedAnswers.forEach((answer, index) => {
+          if (answer === this.questions[index].answer) {
+            correct++;
+          }
+        });
+        this.score = correct;
+        this.showResults = true;
+      } else {
+        // Reset quiz
+        this.selectedAnswers = Array(this.questions.length).fill(null);
+        this.score = null;
+        this.showResults = false;
+        this.currentQuestion = 0;
+      }
     }
   }));
 })
 </script>
 
-<!-- ✅ Load Alpine.js After Script -->
 <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x/dist/cdn.min.js" defer></script>
