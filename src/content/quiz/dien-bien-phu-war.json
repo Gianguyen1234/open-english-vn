@@ -1,0 +1,62 @@
+{
+    "slug": "dien-bien-phu-victory",
+    "title": "Điện Biên Phủ Victory Quiz",
+    "description": "Test your knowledge about the Điện Biên Phủ Victory with these challenging questions!",
+    "questions": [
+        {
+            "question": "When did the Battle of Điện Biên Phủ take place?",
+            "options": ["1952", "1953", "1954", "1955"],
+            "answer": "1954"
+        },
+        {
+            "question": "Which country was the main opponent of Vietnam in the Battle of Điện Biên Phủ?",
+            "options": ["United States", "China", "France", "United Kingdom"],
+            "answer": "France"
+        },
+        {
+            "question": "Who was the Vietnamese general leading the campaign at Điện Biên Phủ?",
+            "options": ["Ho Chi Minh", "Nguyễn Chí Thanh", "Võ Nguyên Giáp", "Trường Chinh"],
+            "answer": "Võ Nguyên Giáp"
+        },
+        {
+            "question": "Which military strategy did the Vietnamese forces use to defeat the French at Điện Biên Phủ?",
+            "options": ["Blitzkrieg", "Human-wave attack", "Encirclement and siege", "Guerilla warfare"],
+            "answer": "Encirclement and siege"
+        },
+        {
+            "question": "What was the name of the French commander at Điện Biên Phủ?",
+            "options": ["Jean de Lattre de Tassigny", "Henri Navarre", "Christian de Castries", "Philippe Leclerc"],
+            "answer": "Christian de Castries"
+        },
+        {
+            "question": "How long did the Battle of Điện Biên Phủ last?",
+            "options": ["27 days", "45 days", "56 days", "78 days"],
+            "answer": "56 days"
+        },
+        {
+            "question": "What was the significance of the Battle of Điện Biên Phủ?",
+            "options": [
+                "It marked the beginning of the Cold War",
+                "It led to the end of French colonial rule in Indochina",
+                "It resulted in Vietnam's unification",
+                "It caused the Vietnam War to start"
+            ],
+            "answer": "It led to the end of French colonial rule in Indochina"
+        },
+        {
+            "question": "Which agreement was signed after the Vietnamese victory at Điện Biên Phủ?",
+            "options": ["Geneva Accords", "Paris Peace Accords", "Yalta Agreement", "Versailles Treaty"],
+            "answer": "Geneva Accords"
+        },
+        {
+            "question": "What type of terrain posed a challenge for both French and Vietnamese forces at Điện Biên Phủ?",
+            "options": ["Deserts", "Mountains and jungles", "Plains", "Swamps"],
+            "answer": "Mountains and jungles"
+        },
+        {
+            "question": "Which of the following weapons were heavily used by the Vietnamese forces at Điện Biên Phủ?",
+            "options": ["Tanks", "Naval warships", "Artillery and anti-aircraft guns", "Biological weapons"],
+            "answer": "Artillery and anti-aircraft guns"
+        }
+    ]
+}
