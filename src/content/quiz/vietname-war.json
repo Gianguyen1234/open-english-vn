@@ -6,52 +6,62 @@
         {
             "question": "When did the Vietnam War officially start?",
             "options": ["1955", "1960", "1965", "1970"],
-            "answer": "1955"
+            "answer": "1955",
+            "explanation": "The Vietnam War officially began in 1955, following the establishment of the Republic of Vietnam (South Vietnam) and the start of hostilities between North and South Vietnam."
         },
         {
             "question": "What was the main reason for U.S. involvement in the Vietnam War?",
             "options": ["Oil resources", "Containment of communism", "Territorial expansion", "Economic interests"],
-            "answer": "Containment of communism"
+            "answer": "Containment of communism",
+            "explanation": "The U.S. entered the Vietnam War to prevent the spread of communism in Southeast Asia, in line with the broader Cold War strategy of containing communism."
         },
         {
             "question": "Which country controlled Vietnam before it gained independence in 1954?",
             "options": ["China", "Japan", "France", "United Kingdom"],
-            "answer": "France"
+            "answer": "France",
+            "explanation": "Vietnam was a French colony known as French Indochina until it gained independence in 1954 after the First Indochina War."
         },
         {
             "question": "Who was the leader of North Vietnam during most of the war?",
             "options": ["Nguyen Van Thieu", "Ho Chi Minh", "Diem Bien Phu", "Vo Nguyen Giap"],
-            "answer": "Ho Chi Minh"
+            "answer": "Ho Chi Minh",
+            "explanation": "Ho Chi Minh was the leader of North Vietnam and a key figure in the struggle for Vietnamese independence from French colonial rule and later in the Vietnam War."
         },
         {
             "question": "What was the name of the communist forces in South Vietnam?",
             "options": ["Viet Cong", "Khmer Rouge", "Red Army", "Pathet Lao"],
-            "answer": "Viet Cong"
+            "answer": "Viet Cong",
+            "explanation": "The Viet Cong, also known as the National Front for the Liberation of South Vietnam, were communist insurgents who fought against the South Vietnamese government during the Vietnam War."
         },
         {
             "question": "Which major offensive by North Vietnam in 1968 marked a turning point in the war?",
             "options": ["Dien Bien Phu Battle", "Tet Offensive", "Fall of Saigon", "My Lai Massacre"],
-            "answer": "Tet Offensive"
+            "answer": "Tet Offensive",
+            "explanation": "The Tet Offensive in 1968 was a coordinated series of attacks by North Vietnam and the Viet Cong on South Vietnam, marking a turning point in the war and shifting U.S. public opinion."
         },
         {
             "question": "What chemical defoliant was used by the U.S. military to destroy jungle cover?",
             "options": ["Agent Blue", "Agent Orange", "Napalm", "Mustard Gas"],
-            "answer": "Agent Orange"
+            "answer": "Agent Orange",
+            "explanation": "Agent Orange was a herbicide used by the U.S. to defoliate forests and crops in Vietnam, causing widespread environmental damage and health issues for both Vietnamese civilians and U.S. veterans."
         },
         {
             "question": "When did Saigon fall, marking the end of the Vietnam War?",
             "options": ["April 30, 1973", "April 30, 1975", "May 1, 1976", "March 15, 1974"],
-            "answer": "April 30, 1975"
+            "answer": "April 30, 1975",
+            "explanation": "Saigon fell on April 30, 1975, marking the end of the Vietnam War and the reunification of Vietnam under communist control."
         },
         {
             "question": "Which U.S. president significantly escalated American troop presence in Vietnam?",
             "options": ["Dwight Eisenhower", "John F. Kennedy", "Lyndon B. Johnson", "Richard Nixon"],
-            "answer": "Lyndon B. Johnson"
+            "answer": "Lyndon B. Johnson",
+            "explanation": "President Lyndon B. Johnson significantly escalated U.S. military involvement in Vietnam, deploying large numbers of American troops during the early 1960s."
         },
         {
             "question": "What was the name of the peace agreement that ended U.S. direct involvement in the war?",
             "options": ["Geneva Accords", "Paris Peace Accords", "Yalta Agreement", "Potsdam Conference"],
-            "answer": "Paris Peace Accords"
+            "answer": "Paris Peace Accords",
+            "explanation": "The Paris Peace Accords, signed in 1973, marked the formal agreement that ended U.S. direct involvement in the Vietnam War, leading to a ceasefire and the eventual fall of Saigon."
         }
     ]
 }

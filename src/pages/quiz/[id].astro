@@ -40,6 +40,45 @@ const quizJson = JSON.stringify(quiz.data.questions);
            x-data="quizComponent({questions: JSON.parse($el.dataset.quiz)})"
            data-quiz={quizJson}>
 
+        <!-- Progress indicator -->
+        <div class="px-6 pt-6 pb-4">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-sm font-medium text-gray-700 dark:text-gray-300" x-text="`Question ${currentQuestion + 1} of ${questions.length}`"></span>
+            <span class="text-sm font-medium text-blue-600 dark:text-blue-400" x-text="`${Math.round(((currentQuestion + 1)/questions.length)*100)}%`"></span>
+          </div>
+          <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+            <div class="bg-blue-600 dark:bg-blue-500 h-2.5 rounded-full" 
+                 :style="`width: ${((currentQuestion + 1)/questions.length)*100}%`"></div>
+          </div>
+        </div>
+
+        <!-- Result message (shown after submission) -->
+        <template x-if="showResults">
+          <div class="px-6 pt-4">
+            <div x-show="score === questions.length" 
+                 class="bg-green-50 dark:bg-green-900 border border-green-200 dark:border-green-800 text-green-800 dark:text-green-200 px-4 py-3 rounded-lg mb-4 flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="font-semibold">Perfect! 🎉 You got all answers correct!</span>
+            </div>
+            <div x-show="score >= questions.length * 0.7 && score < questions.length" 
+                 class="bg-blue-50 dark:bg-blue-900 border border-blue-200 dark:border-blue-800 text-blue-800 dark:text-blue-200 px-4 py-3 rounded-lg mb-4 flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span class="font-semibold">Great job! 👍 You're doing well!</span>
+            </div>
+            <div x-show="score < questions.length * 0.7 && score !== null" 
+                 class="bg-yellow-50 dark:bg-yellow-900 border border-yellow-200 dark:border-yellow-800 text-yellow-800 dark:text-yellow-200 px-4 py-3 rounded-lg mb-4 flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+              </svg>
+              <span class="font-semibold">Good try! 💪 Review the answers and try again!</span>
+            </div>
+          </div>
+        </template>
+
         <div class="p-6 space-y-6">
           <template x-for="(q, index) in questions" :key="index">
             <div class="border border-gray-200 dark:border-gray-700 p-5 rounded-lg transition-all duration-200 hover:shadow-sm"
@@ -63,6 +102,11 @@ const quizJson = JSON.stringify(quiz.data.questions);
                   </button>
                 </template>
               </div>
+              
+              <!-- Explanation (shown after submission) -->
+              <div x-show="showResults && q.explanation" class="mt-4 p-3 bg-gray-50 dark:bg-gray-700 rounded-lg text-sm text-gray-700 dark:text-gray-300">
+                <span class="font-medium">Explanation:</span> <span x-text="q.explanation"></span>
+              </div>
             </div>
           </template>
         </div>
@@ -73,12 +117,30 @@ const quizJson = JSON.stringify(quiz.data.questions);
             (<span x-text="Math.round((score/questions.length)*100)"></span>%)
           </div>
           
-          <button 
-            class="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-medium rounded-lg shadow hover:shadow-md transition-all duration-300"
-            @click="handleSubmit"
-            x-text="score === null ? 'Submit Quiz' : 'Try Again'"
-          >
-          </button>
+          <div class="flex gap-3 w-full sm:w-auto">
+            <button 
+              x-show="!showResults && currentQuestion > 0"
+              @click="currentQuestion--"
+              class="px-4 py-3 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 font-medium rounded-lg transition-all duration-300"
+            >
+              Previous
+            </button>
+            
+            <button 
+              x-show="!showResults && currentQuestion < questions.length - 1"
+              @click="currentQuestion++"
+              class="px-4 py-3 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 font-medium rounded-lg transition-all duration-300"
+            >
+              Next
+            </button>
+            
+            <button 
+              class="px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-medium rounded-lg shadow hover:shadow-md transition-all duration-300"
+              @click="handleSubmit"
+              x-text="score === null ? 'Submit Quiz' : 'Try Again'"
+            >
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -110,6 +172,14 @@ document.addEventListener("alpine:init", () => {
         });
         this.score = correct;
         this.showResults = true;
+        
+        // Scroll to top to see results
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        
+        // Celebrate if perfect score
+        if (this.score === this.questions.length) {
+          this.celebrate();
+        }
       } else {
         // Reset quiz
         this.selectedAnswers = Array(this.questions.length).fill(null);
@@ -117,9 +187,41 @@ document.addEventListener("alpine:init", () => {
         this.showResults = false;
         this.currentQuestion = 0;
       }
+    },
+    
+    celebrate() {
+      // Simple celebration effect
+      const duration = 2000;
+      const end = Date.now() + duration;
+      const colors = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444'];
+      
+      const frame = () => {
+        if (Date.now() > end) return;
+        
+        confetti({
+          particleCount: 2,
+          angle: 60,
+          spread: 55,
+          origin: { x: 0 },
+          colors: colors
+        });
+        
+        confetti({
+          particleCount: 2,
+          angle: 120,
+          spread: 55,
+          origin: { x: 1 },
+          colors: colors
+        });
+        
+        requestAnimationFrame(frame);
+      };
+      
+      frame();
     }
   }));
 })
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x/dist/cdn.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
