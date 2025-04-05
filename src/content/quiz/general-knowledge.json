@@ -6,67 +6,80 @@
         {
             "question": "What is the capital of France?",
             "options": ["Berlin", "Madrid", "Paris", "Rome"],
-            "answer": "Paris"
+            "answer": "Paris",
+            "explanation": "Paris is the capital and largest city of France, known for its rich history, art, and landmarks like the Eiffel Tower."
         },
         {
             "question": "Which planet is known as the Red Planet?",
             "options": ["Earth", "Mars", "Jupiter", "Venus"],
-            "answer": "Mars"
+            "answer": "Mars",
+            "explanation": "Mars is often called the Red Planet due to its reddish appearance, which is caused by iron oxide (rust) on its surface."
         },
         {
             "question": "Who wrote 'To Kill a Mockingbird'?",
             "options": ["Harper Lee", "Mark Twain", "Ernest Hemingway", "J.K. Rowling"],
-            "answer": "Harper Lee"
+            "answer": "Harper Lee",
+            "explanation": "Harper Lee wrote 'To Kill a Mockingbird,' a novel published in 1960 that deals with racial injustice in the American South."
         },
         {
             "question": "Which is the largest ocean on Earth?",
             "options": ["Atlantic", "Indian", "Pacific", "Arctic"],
-            "answer": "Pacific"
+            "answer": "Pacific",
+            "explanation": "The Pacific Ocean is the largest ocean, covering more than 63 million square miles and extending from the Arctic to the Southern Ocean."
         },
         {
             "question": "What is the chemical symbol for gold?",
             "options": ["Go", "Au", "Ag", "Gd"],
-            "answer": "Au"
+            "answer": "Au",
+            "explanation": "The chemical symbol for gold is 'Au,' derived from the Latin word 'Aurum,' meaning 'shining dawn.'"
         },
         {
             "question": "How many continents are there?",
             "options": ["5", "6", "7", "8"],
-            "answer": "7"
+            "answer": "7",
+            "explanation": "There are seven continents: Africa, Antarctica, Asia, Europe, North America, Oceania, and South America."
         },
         {
             "question": "What year did World War II end?",
             "options": ["1942", "1945", "1950", "1939"],
-            "answer": "1945"
+            "answer": "1945",
+            "explanation": "World War II ended in 1945 with the surrender of Germany in May and Japan in September after the atomic bombings of Hiroshima and Nagasaki."
         },
         {
             "question": "Which is the longest river in the world?",
             "options": ["Amazon", "Nile", "Yangtze", "Mississippi"],
-            "answer": "Nile"
+            "answer": "Nile",
+            "explanation": "The Nile River is the longest river in the world, stretching about 6,650 km (4,130 miles) and flowing through northeastern Africa."
         },
         {
             "question": "Who painted the Mona Lisa?",
             "options": ["Van Gogh", "Picasso", "Leonardo da Vinci", "Rembrandt"],
-            "answer": "Leonardo da Vinci"
+            "answer": "Leonardo da Vinci",
+            "explanation": "Leonardo da Vinci painted the Mona Lisa, one of the most famous artworks in the world, displayed at the Louvre Museum in Paris."
         },
         {
             "question": "What is the hardest natural substance on Earth?",
             "options": ["Gold", "Iron", "Diamond", "Platinum"],
-            "answer": "Diamond"
+            "answer": "Diamond",
+            "explanation": "Diamond is the hardest natural substance on Earth, formed under extreme pressure and used in cutting tools and jewelry."
         },
         {
             "question": "What does DNA stand for?",
             "options": ["Deoxyribonucleic Acid", "Dynamic Neural Algorithm", "Digital Network Array", "Data Node Access"],
-            "answer": "Deoxyribonucleic Acid"
+            "answer": "Deoxyribonucleic Acid",
+            "explanation": "DNA stands for Deoxyribonucleic Acid, the molecule that carries genetic instructions for the development and functioning of all living organisms."
         },
         {
             "question": "How many bones are in the adult human body?",
             "options": ["200", "206", "215", "198"],
-            "answer": "206"
+            "answer": "206",
+            "explanation": "The adult human body has 206 bones, which provide structure, protect organs, and support movement."
         },
         {
             "question": "What is the smallest country in the world?",
             "options": ["Vatican City", "Monaco", "Malta", "Liechtenstein"],
-            "answer": "Vatican City"
+            "answer": "Vatican City",
+            "explanation": "Vatican City is the smallest country in the world, covering about 44 hectares (110 acres) and serving as the headquarters of the Roman Catholic Church."
         }
     ]
 }

@@ -11,7 +11,8 @@
                 "1905",
                 "1918"
             ],
-            "answer": "1914"
+            "answer": "1914",
+            "explanation": "World War I started in 1914 after the assassination of Archduke Franz Ferdinand of Austria, leading to a global conflict involving major world powers."
         },
         {
             "question": "Who was the first president of the United States?",
@@ -21,7 +22,8 @@
                 "John Adams",
                 "Benjamin Franklin"
             ],
-            "answer": "George Washington"
+            "answer": "George Washington",
+            "explanation": "George Washington became the first president of the United States in 1789 and served two terms, setting many precedents for the office."
         },
         {
             "question": "Which ancient civilization built the pyramids of Giza?",
@@ -31,7 +33,8 @@
                 "Egyptian",
                 "Persian"
             ],
-            "answer": "Egyptian"
+            "answer": "Egyptian",
+            "explanation": "The ancient Egyptians built the pyramids of Giza around 2600 BC as tombs for their pharaohs, demonstrating advanced engineering skills."
         }
     ]
 }
