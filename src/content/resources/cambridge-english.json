@@ -1,0 +1,9 @@
+{
+  "title": "Cambridge English",
+  "description": "The Cambridge English website provides free resources and exercises to help learners of all levels improve their English skills. Created by University of Cambridge experts, it offers engaging content for vocabulary, grammar, and communication practice.",
+  "url": "https://www.cambridgeenglish.org/learning-english/",
+  "image": "/open-english-vn/images/resources/cambridge-english.png",
+  "category": "General",
+  "tags": ["grammar", "listening", "pronunciation", "reading", "speaking", "vocabulary", "writing"],
+  "free": true
+}
