@@ -1,0 +1,9 @@
+{
+  "title": "IELTS Writing Checker",
+  "description": "Checks IELTS Task 1 and Task 2 writing with estimated scores and feedback.",
+  "url": "https://ieltswritingchecker.org/",
+  "image": "/open-english-vn/images/resources/ielts-writing-checker.png",
+  "category": "IELTS",
+  "tags": ["ielts", "writing", "feedback"],
+  "free": true
+}
