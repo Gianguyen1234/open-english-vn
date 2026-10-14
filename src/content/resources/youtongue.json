@@ -1,0 +1,9 @@
+{
+  "title": "YouTongue",
+  "description": "Type any English word or phrase and hear real people say it in short YouTube clips, in American, British, Australian or New Zealand English, with replay and slower playback. A free 3-minute daily dictation trains your ear on natural-speed speech: hear a real clip and type the missing word. A Chrome extension plays the clips for any word you select on a web page.",
+  "url": "https://youtongue.me",
+  "image": "/open-english-vn/images/resources/youtongue.png",
+  "category": "Listening",
+  "tags": ["pronunciation", "listening", "dictation", "accents", "real speech", "chrome extension"],
+  "free": true
+}
