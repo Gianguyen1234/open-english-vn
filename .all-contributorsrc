@@ -168,6 +168,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "shelfom",
+      "name": "Shelfom",
+      "avatar_url": "https://avatars.githubusercontent.com/u/259815108?v=4",
+      "profile": "https://github.com/shelfom",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "contributorsPerLine": 7,
