@@ -177,6 +177,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "nonacosa",
+      "name": "nonacosa",
+      "avatar_url": "https://avatars.githubusercontent.com/u/14212375?v=4",
+      "profile": "https://github.com/nonacosa",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "contributorsPerLine": 7,

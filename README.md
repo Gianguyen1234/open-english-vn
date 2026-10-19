@@ -1,6 +1,6 @@
 # Open English VN Resources
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-18-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-19-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 A curated collection of English learning resources for Vietnamese learners.
 ## Contributors ✨
@@ -35,6 +35,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://www.facebook.com/YuranLegends"><img src="https://avatars.githubusercontent.com/u/76398420?v=4?s=100" width="100px;" alt="Yuran"/><br /><sub><b>Yuran</b></sub></a><br /><a href="#content-yuran1811" title="Content">🖋</a> <a href="#design-yuran1811" title="Design">🎨</a> <a href="https://github.com/Gianguyen1234/open-english-vn/issues?q=author%3Ayuran1811" title="Bug reports">🐛</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/ThangNguyen23"><img src="https://avatars.githubusercontent.com/u/63710361?v=4?s=100" width="100px;" alt="ThangNguyen23"/><br /><sub><b>ThangNguyen23</b></sub></a><br /><a href="#content-ThangNguyen23" title="Content">🖋</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/shelfom"><img src="https://avatars.githubusercontent.com/u/259815108?v=4?s=100" width="100px;" alt="Shelfom"/><br /><sub><b>Shelfom</b></sub></a><br /><a href="#content-shelfom" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/nonacosa"><img src="https://avatars.githubusercontent.com/u/14212375?v=4?s=100" width="100px;" alt="nonacosa"/><br /><sub><b>nonacosa</b></sub></a><br /><a href="#content-nonacosa" title="Content">🖋</a></td>
     </tr>
   </tbody>
   <tfoot>
