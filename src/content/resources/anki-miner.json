@@ -1,0 +1,9 @@
+{
+  "title": "Anki Miner",
+  "description": "Automated English vocabulary card creation from video, audio, manga and books. For a movie, TV episode or YouTube video, each card gets the sentence, audio, a screenshot and a definition.",
+  "url": "https://github.com/0xzerolight/anki_miner",
+  "image": "/open-english-vn/images/resources/anki-miner.webp",
+  "category": "Vocabulary",
+  "tags": ["vocabulary", "anki", "flashcards", "movies", "sentence mining"],
+  "free": true
+}
