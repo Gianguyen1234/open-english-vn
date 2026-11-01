@@ -1,0 +1,14 @@
+{
+  "title": "VocaFlare Clips Playground",
+  "description": "Type an English or Spanish word and watch real YouTube clips that jump to the second it is spoken, with the caption line underneath. Filter clips by CEFR level (A1 to C2). Free, no sign-up, with a daily limit per visitor.",
+  "url": "https://clips.vocaflare.com/playground",
+  "image": "/open-english-vn/images/resources/vocaflare-clips.webp",
+  "category": "Listening",
+  "tags": [
+    "pronunciation",
+    "listening",
+    "vocabulary",
+    "video"
+  ],
+  "free": true
+}
