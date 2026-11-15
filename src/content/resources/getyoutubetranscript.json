@@ -1,0 +1,9 @@
+{
+    "title": "GetYouTubeTranscript",
+    "description": "Get the transcript of any captioned YouTube video with timestamps, read along while you listen, translate it into Vietnamese or another language, and ask AI to summarize or explain parts you did not catch. A few transcripts a day are free without an account.",
+    "url": "https://getyoutubetranscript.com/",
+    "image": "/open-english-vn/images/resources/getyoutubetranscript.png",
+    "category": "Listening",
+    "tags": ["listening", "youtube", "transcript", "subtitles"],
+    "free": true
+  }
