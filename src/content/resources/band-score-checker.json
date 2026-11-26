@@ -1,0 +1,9 @@
+{
+  "title": "Band Score Checker",
+  "description": "AI estimates of IELTS Writing Task 1 and Task 2 bands on all four criteria, with feedback in Vietnamese. Free daily check; paid plans add every correction.",
+  "url": "https://bandscorechecker.com/vi/",
+  "image": "/open-english-vn/images/resources/band-score-checker.png",
+  "category": "IELTS",
+  "tags": ["ielts", "writing", "feedback", "vietnamese"],
+  "free": true
+}
